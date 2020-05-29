@@ -2,7 +2,7 @@ function vowelsAndConsonants(s) {
     let vowels = '';
     let consonants = '';
 
-    // For each letter in string s
+    // for-of文で文字列sを一文字ずつ検証する
     for (const letter of s) {
         // Separate vowels and consonants
         if (letter == 'a' ||
@@ -11,22 +11,22 @@ function vowelsAndConsonants(s) {
             letter == 'o' ||
             letter == 'u'
            ) {
-            // Append vowel to vowel string
+            // aeiouのどれかならvowelsに結合していく
             vowels += letter;
         } else {
-            // Append consonant to consonant string
+            // aeiou以外ならconsonantsに結合していく
             consonants += letter;
         }
     }
     
-    // Print each vowel
-    // This loop iterates over each character in the vowels string in order
+    // vowelsを一文字ずつ出力していく
+    // iteratorを使って文字列のcharAt(index)で文字を抽出する
     for (let i = 0; i < vowels.length; i++) {
         console.log(vowels.charAt(i));
     }
     
-    // Print each consonant
-    // This loop iterates over each letter in an array consisting of the consonants
+    // consonantsを一文字ずつ出力していく
+    // こっちはfor-of文で、split('')←一文字単位配列化で抽出する
     for (const letter of consonants.split('')) {
         console.log(letter);
     }
